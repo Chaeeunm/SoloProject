@@ -56,6 +56,7 @@ public class ToDoService {
         return toDoRepository.findAll(); //페이지네이션 어려워서 구현모탐...ㅎㅎㅎㅎ
     }
 
+
     //할일 1개 삭제
     public void deleteToDo(long toDoId){
         ToDo findToDo = verifyToDo(toDoId);

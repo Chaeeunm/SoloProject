@@ -14,5 +14,5 @@ public interface ToDoMapper {
     ToDo ToDoPatchDtoToToDo(ToDoPatchDto toDoPatchDto);
 
     //ToDo엔티티객체 -> 리스폰스DTo
-    ToDoResponseDto ToDoResponseDtoToToDo(ToDo todo);
+    ToDoResponseDto ToDoToToDoResponseDto(ToDo todo);
 }
