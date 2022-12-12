@@ -14,6 +14,7 @@ import javax.validation.constraints.Positive;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@CrossOrigin //Cors설정
 @RestController
 @RequestMapping(value="/todo")
 @Validated
@@ -39,7 +40,7 @@ public class ToDoController {
     @PatchMapping("/{toDo-id}")
     public ResponseEntity patchToDo(@PathVariable("toDo-id") @Positive long toDoId,
                                     @Valid @RequestBody ToDoPatchDto toDoPatchDto) {
-        ToDo toDo = toDoService.updateToDo(mapper.ToDoPatchDtoToToDo(toDoPatchDto));
+        ToDo toDo = toDoService.updateToDo(toDoId,mapper.ToDoPatchDtoToToDo(toDoPatchDto));
 
         return new ResponseEntity<>(mapper.ToDoToToDoResponseDto(toDo), HttpStatus.OK);
 

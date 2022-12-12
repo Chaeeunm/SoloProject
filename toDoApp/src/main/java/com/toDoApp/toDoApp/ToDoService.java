@@ -29,9 +29,10 @@ public class ToDoService {
     }
 
     //할일 수정 로직
-    public ToDo updateToDo(ToDo toDo) {
+    //오류가 나서 para에 toDoId 추가 -> 오류 해결 (원인은 모름..ㅎ)
+    public ToDo updateToDo(long toDoId,ToDo toDo) {
         //존재하는 할일 목록인지 확인
-        ToDo findToDo = verifyToDo(toDo.getToDoId());
+        ToDo findToDo = verifyToDo(toDoId);
 
         //각 변수가 존재한다면(변경 내용이 있다면) 바꿔서 저장해주기
         Optional.ofNullable(toDo.getTitle())
